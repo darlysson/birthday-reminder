@@ -12,7 +12,6 @@ export const GlobalStyle = createGlobalStyle`
     background: #f2f2f2;
     -webkit-font-smoothing: antialiased;
     font-family: 'Poppins', sans-serif;
-    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: row;
