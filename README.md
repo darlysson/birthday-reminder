@@ -1,3 +1,5 @@
-## Purpose
+## Birthday Reminder App
 
-This is a simple React App in order to try useState hook.
+This is a React App example.
+
+🌎 [https://birthday-reminder.pages.dev/](https://birthday-reminder.pages.dev/)

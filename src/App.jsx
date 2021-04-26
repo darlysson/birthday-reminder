@@ -37,10 +37,14 @@ const Heading = styled.h3`
 `
 
 function App() {
-  const [birthday, setBirthday] = useState(data.length)
+  const [birthday, setBirthday] = useState(data)
 
   function handleClearAllBirthdays() {
     setBirthday(0)
+  }
+
+  function handleShowAllBirthdays() {
+    setBirthday(data)
   }
 
   return (
@@ -48,22 +52,26 @@ function App() {
       {birthday !== 0 ? (
         <>
           <Heading>
-            <h3>
-              <span>{birthday}</span> birthdays today. 🎂🎉
-            </h3>
+            <h4>
+              <span>{birthday.length}</span> birthdays today. 🎂🎉
+            </h4>
           </Heading>
 
           {data.map((person) => {
-            return <Person personDetails={person} />
+            return <Person key={person.id} {...person} />
           })}
+
+          <Button onClick={() => handleClearAllBirthdays()}>Clear All</Button>
         </>
       ) : (
-        <Heading>
-          <h3>You have no birthdays today. 🤷‍♀️</h3>
-        </Heading>
-      )}
+        <>
+          <Heading>
+            <h4>You have no birthdays today. 🤷‍♀️</h4>
+          </Heading>
 
-      <Button onClick={() => handleClearAllBirthdays()}>Clear All</Button>
+          <Button onClick={() => handleShowAllBirthdays()}>Show All</Button>
+        </>
+      )}
 
       <GlobalStyle />
     </Container>

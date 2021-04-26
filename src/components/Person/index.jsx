@@ -1,13 +1,13 @@
 import { PersonContainer } from './styles'
 
-export function Person({ personDetails }) {
+export function Person({ name, age, img }) {
   return (
     <PersonContainer>
-      <img src={personDetails.img} alt={personDetails.name} />
+      <img src={img} alt={name} />
 
       <div className='content'>
-        <h2>{personDetails.name}</h2>
-        <p>{personDetails.age} years old</p>
+        <h2>{name}</h2>
+        <p>{age} years old</p>
       </div>
     </PersonContainer>
   )
